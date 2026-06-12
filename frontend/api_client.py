@@ -2,7 +2,7 @@ import requests
 from typing import Dict, Any, List, Optional
 
 class APIClient:
-    def __init__(self, base_url: str = "http://127.0.0.1:8000/api"):
+    def __init__(self, base_url: str = "https://ai-interview-evaluator.onrender.com/api"):
         self.base_url = base_url
 
     def check_health(self) -> Dict[str, Any]:

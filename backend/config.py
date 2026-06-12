@@ -20,3 +20,5 @@ class Settings:
     DEMO_MODE: bool = DEMO_MODE_ENV in ("true", "1", "yes") or not GEMINI_API_KEY
 
 settings = Settings()
+print("Demo Mode:", settings.DEMO_MODE)
+print("API Key Loaded:", bool(settings.GEMINI_API_KEY))
