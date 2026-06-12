@@ -1,83 +1,197 @@
-# AI Interview Question Generator & Answer Evaluation System
+# 🎯 AI Interview Evaluator
 
-A production-quality, modular, and deployment-ready mock interview simulator built with **FastAPI**, **Streamlit**, **SQLAlchemy** (SQLite), and **Gemini 2.5 Flash API** using **LangChain**.
+An AI-powered interview preparation platform that simulates real interview experiences by generating role-specific questions, evaluating responses, and providing detailed feedback using Google's Gemini AI.
 
-## Features
+## 🚀 Overview
 
-1. **Interview Setup**: Select Job Role (AIML Engineer, Software Engineer, Data Analyst, Cloud Engineer, Full Stack Developer), Difficulty Level (Entry-Level, Mid-Level, Senior, Lead), Interview Type (Technical, HR, Behavioral), and the number of questions.
-2. **AI Question Generation**: Context-aware interview questions generated dynamically using Gemini 2.5 Flash.
-3. **Interactive Simulation**: Step-by-step interview experience with an integrated countdown timer.
-4. **AI Answer Evaluation**: Reviews responses based on:
-   - Relevance
-   - Technical Accuracy
-   - Completeness
-   - Communication Quality
-   - Problem Solving Ability
-5. **Real-time Feedback**: Displays overall scores, criteria breakdown, strengths, weaknesses, and a suggested professional answer immediately after submission.
-6. **SQLite Storage & History**: Saves all mock interviews and individual question feedback to a local SQLite database, accessible through a structured "Interview History" dashboard.
+Preparing for technical interviews can be challenging without personalized feedback. AI Interview Evaluator helps candidates practice interviews in a realistic environment by generating intelligent questions and evaluating answers instantly.
 
-## Directory Structure
+The system acts as a virtual interviewer, providing structured assessments and helping users identify areas for improvement before real interviews.
+
+---
+
+## ✨ Key Features
+
+### 🤖 AI-Powered Question Generation
+
+* Generates interview questions dynamically using Gemini AI
+* Role-specific interview experience
+* Multiple difficulty levels
+
+### 📊 Intelligent Answer Evaluation
+
+* Evaluates answers based on relevance, clarity, and completeness
+* Provides constructive feedback
+* Generates detailed performance insights
+
+### 📈 Interview Scoring System
+
+* Calculates overall interview score
+* Tracks individual question performance
+* Highlights strengths and improvement areas
+
+### 📝 Interview History
+
+* Stores previous interview sessions
+* Saves questions, answers, evaluations, and scores
+* Allows users to review past performance
+
+### 💾 Persistent Storage
+
+* SQLite database integration
+* Secure storage of interview records
+* Fast and lightweight data management
+
+---
+
+## 🏗️ System Architecture
 
 ```text
-ai_interview_generator/
+User
+  │
+  ▼
+Streamlit Frontend
+  │
+  ▼
+FastAPI Backend
+  │
+  ▼
+Gemini AI Services
+  │
+  ▼
+SQLite Database
+```
+
+---
+
+## 🛠️ Tech Stack
+
+| Component | Technology       |
+| --------- | ---------------- |
+| Frontend  | Streamlit        |
+| Backend   | FastAPI          |
+| Database  | SQLite           |
+| ORM       | SQLAlchemy       |
+| AI Model  | Gemini 2.5 Flash |
+| Language  | Python           |
+
+---
+
+## 📂 Project Structure
+
+```text
+AI-Interview-Evaluator/
+│
 ├── backend/
 │   ├── database/
-│   │   ├── __init__.py
-│   │   ├── connection.py
-│   │   ├── models.py
-│   │   └── crud.py
 │   ├── services/
-│   │   ├── __init__.py
-│   │   ├── question_service.py
-│   │   └── evaluation_service.py
-│   ├── __init__.py
-│   ├── config.py
 │   ├── main.py
 │   └── schemas.py
+│
 ├── frontend/
 │   ├── components/
-│   │   ├── __init__.py
-│   │   ├── history.py
-│   │   ├── interview.py
-│   │   └── setup.py
-│   ├── __init__.py
 │   ├── api_client.py
 │   └── app.py
+│
 ├── requirements.txt
 ├── README.md
-└── .env
+└── .env.example
 ```
 
-## Setup & Running Instructions
+---
 
-### 1. Prerequisite Configuration
-Create a `.env` file in the root of the project:
-```env
-GEMINI_API_KEY=your_gemini_api_key_here
-DATABASE_URL=sqlite:///./interview_system.db
-GEMINI_MODEL=gemini-2.5-flash
+## ⚙️ Installation
+
+### Clone Repository
+
+```bash
+git clone https://github.com/Meenal01-lang/AI-Interview-Evaluator.git
+cd AI-Interview-Evaluator
 ```
 
-### 2. Install Dependencies
-It is recommended to run within a python virtual environment:
+### Create Virtual Environment
+
 ```bash
 python -m venv venv
-venv\Scripts\activate      # On Windows
-source venv/bin/activate    # On macOS/Linux
+```
 
+### Activate Environment
+
+```bash
+venv\Scripts\activate
+```
+
+### Install Dependencies
+
+```bash
 pip install -r requirements.txt
 ```
 
-### 3. Launch Backend (FastAPI Server)
-From the root of the project:
-```bash
-uvicorn backend.main:app --host 127.0.0.1 --port 8000 --reload
-```
-The documentation is available locally at: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+### Configure Environment Variables
 
-### 4. Launch Frontend (Streamlit App)
-In a new terminal window:
+Create a `.env` file:
+
+```env
+GEMINI_API_KEY=your_api_key_here
+```
+
+---
+
+## ▶️ Run the Application
+
+### Start Backend
+
+```bash
+uvicorn backend.main:app --reload
+```
+
+Backend runs on:
+
+```text
+http://localhost:8000
+```
+
+### Start Frontend
+
 ```bash
 streamlit run frontend/app.py
 ```
-Open your browser and navigate to the local URL displayed (usually `http://localhost:8501`).
+
+Frontend runs on:
+
+```text
+http://localhost:8501
+```
+
+---
+
+## 🎯 Future Enhancements
+
+* Resume-Based Interview Generation
+* PDF Resume Upload
+* Personalized Question Recommendations
+* Performance Analytics Dashboard
+* Multi-Round Interview Simulation
+* Voice-Based Interviews
+* Cloud Deployment
+
+---
+
+## 📸 Screenshots
+
+
+
+---
+
+## 👩‍💻 Author
+
+**Meenal**
+
+B.Tech CSE (AI) | AI & Machine Learning Enthusiast
+
+Passionate about building intelligent applications that solve real-world problems using Artificial Intelligence and Large Language Models.
+
+---
+
+## ⭐ If you found this project interesting, consider giving it a star!
+
