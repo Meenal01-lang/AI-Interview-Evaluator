@@ -1,0 +1,1 @@
+# Init frontend components module
