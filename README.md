@@ -148,7 +148,7 @@ uvicorn backend.main:app --reload
 Backend runs on:
 
 ```text
-http://localhost:8000
+https://ai-interview-evaluator.onrender.com/docs
 ```
 
 ### Start Frontend
@@ -160,7 +160,8 @@ streamlit run frontend/app.py
 Frontend runs on:
 
 ```text
-http://localhost:8501
+https://ai-interview-evaluator-y5yf3powtbbdp8mynv3mqy.streamlit.app/
+
 ```
 
 ---
