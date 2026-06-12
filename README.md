@@ -180,6 +180,8 @@ http://localhost:8501
 ## 📸 Screenshots
 
 <img width="1920" height="850" alt="Screenshot (513)" src="https://github.com/user-attachments/assets/965c7bc7-e766-44e4-b0f1-7badb5be2ef5" />
+<img width="1920" height="838" alt="Screenshot (514)" src="https://github.com/user-attachments/assets/9fb7e2c9-55a5-43c6-a72e-aaf942a3a76b" />
+
 
 
 ---
